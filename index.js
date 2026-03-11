@@ -1,4 +1,5 @@
-let h5timmer = document.querySelector("#progress h5")
+function loading(){
+    let h5timmer = document.querySelector("#progress h5")
 
 let tl = gsap.timeline();
 
@@ -37,3 +38,18 @@ tl.from("#page1",{
 tl.to("#loader",{
     display: "none",
 })
+}
+
+function cursor(){
+    document.addEventListener("mousemove",function(move){
+        gsap.to("#cursor",{
+            left:move.x,
+            top:move.y 
+        })
+    })
+}
+
+
+
+cursor()
+loading() 
