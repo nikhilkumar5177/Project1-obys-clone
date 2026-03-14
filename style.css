@@ -2,7 +2,6 @@
   cursor: none;
   color: white;
   padding: 0;
-  color: white;
   margin: 0;
   box-sizing: border-box;
   font-family: "Plain Light";
@@ -74,6 +73,7 @@ body {
   /* background-color: red; */
 }
 #page1 {
+    position: relative;
   background-color: #151515;
   height: 100vh;
   width: 100%;
@@ -134,9 +134,8 @@ body {
 
 .hero {
   width: 70%;
-  margin-left: 25%;
+  margin-left: 28vw;
   height: fit-content;
-  overflow: hidden;
   padding-bottom: 0.5vw;
 }
 .hero:nth-child(2) {
@@ -147,6 +146,16 @@ body {
   text-transform: uppercase;
   line-height: 7vw;
   font-size: 7vw;
+}
+
+#hero1 h1:before{
+    color: white;
+    content: "01";
+    position: absolute;
+    left:-10%;
+    font-size:3vw;
+    font-family: "silk serif";
+    font-weight: 100;
 }
 #hero3 {
   display: flex;
@@ -231,6 +240,16 @@ body {
     font-size: 15vh;
     font-weight: 600;
     text-transform: uppercase;
+}
+
+#page4container h1:before{
+    content: "03";
+    position: absolute;
+    top:2vh;
+    left:-15%;
+    font-size:3vw;
+    font-family: "silk serif";
+    font-weight: 100;
 }
 
 #underline{
@@ -355,4 +374,62 @@ font-size: 7vw;
     font-style: italic;
     font-family:"silk serif";
     color: transparent;
+}
+
+#footer{
+    
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #151515;
+    padding:5vh 10vw 0 28vw ;
+}
+
+#footer h1:before{
+    content: "04";
+    position: absolute;
+    left:20%;
+    font-size:3vw;
+    font-family: "silk serif";
+    font-weight: 100;
+}
+.underline{
+    margin:5vh 0;
+    width: 100%;
+    height: 0.2vh;
+    background-color: #fff;
+}
+
+#footer h1{
+    font-size: 6vw;
+    text-transform: uppercase;
+}
+#footer h1:hover{
+     -webkit-text-stroke: 1px #fff;
+    font-style: italic;
+    font-weight: 400;
+    font-family:"silk serif";
+    color: transparent;
+}
+
+
+#footer-div{
+    display: flex;
+    margin:15vh 0;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.box{
+    width: 12vw;
+}
+
+.box h4{
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.box h6{
+    font-size: 1vw;
+    padding: 4vh 0;
 }

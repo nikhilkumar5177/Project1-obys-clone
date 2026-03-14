@@ -35,7 +35,7 @@ function loading() {
         }
     })
 
-    tl.from("#page1, #page2, #page3, #page4, #page5", {
+    tl.from("#page1, #page2, #page3, #page4, #page5, #footer", {
         y: 1600,
         opacity: 0,
         duration: 0.5,
