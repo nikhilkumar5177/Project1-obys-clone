@@ -1,155 +1,294 @@
-/* @font-face {
-    font-family: ;
-    src: url();
-} */
 * {
-    cursor: none; 
-    color: white;
+  cursor: none;
+  color: white;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:"Plain Light";
+  font-family: "Plain Light";
 }
-#main{
-    position: relative;
-    
-}
-#cursor{
-    height: 3vw;
-    width: 3vw;
-    transform: translate(-50%,-50%);
-    border: 1px solid rgba(135, 135, 135, 0.922);
-    border-radius: 50%;
-    position: fixed;
-    z-index: 999999999;
+body.no-scroll {
+  overflow: hidden;
+  height: 100%; /* Ensures the body covers the full viewport height */
 }
 
-html ,body {
+#main {
+  position: relative;
+}
+#cursor {
+  height: 3vw;
+  width: 3vw;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(135, 135, 135, 0.922);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999999999;
+}
+
+html,
+body {
   height: 100%;
   background-color: black;
   width: 100%;
 }
 
-#loader{ 
-    overflow: hidden;
-    height: 100%;
-    width:100%;
-    position: fixed;
-    background-color: #0B0B0B;
-    padding:25vh 10vh;
+#loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: #0b0b0b;
+  padding: 25vh 10vh;
 }
-.h1loader h1{
-    z-index: 999;
-    font-size: 6vw;
-    text-transform: uppercase;
-}
-
-#progress{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap:1.1vw;
-     margin: 0 2vw
+.h1loader h1 {
+  z-index: 999;
+  font-size: 6vw;
+  text-transform: uppercase;
 }
 
-#progress h5{
-    width:6vw;
-    text-align: right;
+#progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1vw;
+  margin: 0 2vw;
 }
-#progress h5 , #progress h6{
-    font-size: 3vw;
-    font-family: "silk serif";
+
+#progress h5 {
+  width: 6vw;
+  text-align: right;
 }
-.h1loader{
-    height: fit-content;
-    overflow: hidden;
-    display: flex;
-     font-weight: 900;
-    align-items: center;
-    justify-content: flex-start;
-    /* background-color: red; */
+#progress h5,
+#progress h6 {
+  font-size: 3vw;
+  font-family: "silk serif";
 }
-#page1{
+.h1loader {
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  font-weight: 900;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: red; */
+}
+#page1 {
   background-color: #151515;
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
 }
 
-#sec{
+#sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sec p {
+  opacity: 1;
+  width: 7vw;
+  z-index: 999;
+}
+
+.h1loader h1 span {
+  animation-name: anime;
+  font-size: 5vw;
+  margin-left: 2vw;
+  position: fixed;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes anime {
+  0% {
+    font-family: "silk serif";
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+
+  50% {
+    font-family: "Plain Light";
+    -webkit-text-stroke: 0px white;
+    color: white;
+  }
+
+  100% {
+    font-family: "silk serif";
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+}
+
+#page1 #nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5vw 5.5vw;
+}
+#nav-part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5vw;
+  font-weight: 500;
+}
+
+.hero {
+  width: 70%;
+  margin-left: 25%;
+  height: fit-content;
+  overflow: hidden;
+  padding-bottom: 0.5vw;
+}
+.hero:nth-child(2) {
+  margin-top: 9vw;
+}
+
+.hero h1 {
+  text-transform: uppercase;
+  line-height: 7vw;
+  font-size: 7vw;
+}
+#hero3 {
+  display: flex;
+  /* position: relative; */
+  font-size: 4.55vw;
+  text-transform: uppercase;
+  line-height: 7vw;
+}
+#hero3 h2 {
+  text-decoration: underline;
+  text-underline-offset: 0.8vw;
+}
+
+#hero3 h2:hover {
+  -webkit-text-stroke: 0.5px white;
+  color: transparent;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+#page2 {
+  background-color: #151515;
+  height: 100vh;
+  font-weight: 100%;
+  position: relative;
+  padding-top: 15vh;
+}
+
+#video-container {
+  height: 65.99vh;
+  position: relative;
+  left: 40%;
+  width: 56.7vw;
+}
+#video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#video-cursor i{
+    font-size: 2vw;
+}
+#video-cursor{
+    padding: 5%;
+    background-color: #FFA63D;
+    position: absolute;
+    height: 8vw;
+    border-radius: 50%;
+    width: 8vw;
+    z-index: 999;
+    top: -10%;
+    left:70%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#sec p{
-    opacity: 100;
-    width:7vw;
-     z-index: 999;
+
+#page3{
+    background-color: #151515;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
 }
 
-.h1loader h1 span{
-    animation-name: anime ;
-    font-size: 5vw;
-    margin-left: 2vw;
-    position: fixed;
-    animation-duration: 2s;
-    animation-iteration-count: infinite ;   
-}
-@keyframes anime{
-    0%{
-        font-family: "silk serif";
-        -webkit-text-stroke:1px white ;
-        color: transparent;
-        font-weight: 900;
-    }
+#page4{
+    background-color: #151515;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-top: 7vh;
 }
 
-#page1 #nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:2.5vw 5.5vw;
- }
-#nav-part2{
-display: flex;
-align-items: center;
-justify-content: center;
-gap:2.5vw;
-font-weight: 500,
- }
+#page4container{
+    gap: 10vw;;
+    width:70vw;
+    position: relative;
+    margin-left:28% ;
+}
 
- .hero{
-    width:70%;
-    margin-left:25%;
-    height: fit-content;
-    overflow: hidden;
-    padding-bottom: 0.5vw;
- }
- .hero:nth-child(2){
-    margin-top:9vw;
- }
-
-/* #underline{
-    text-decoration: underline;
- } */
-.hero h1{
+#page4container h1{
+    font-size: 15vh;
+    font-weight: 600;
     text-transform: uppercase;
-    line-height: 7vw;
-    font-size: 7vw;
- }
- #hero3 {
-    display: flex;
-    font-size: 4.55vw;
-    text-transform: uppercase;
-    line-height: 7vw;
- } 
- #hero3 h2{
-    text-decoration: underline;
-    text-underline-offset: 0.8vw;
- }
+}
 
- #hero3 h2:hover{
-    -webkit-text-stroke: 0.5px white;
-    color: transparent;
+#underline{
+    
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.745);
+    margin: 5vw 0;
+    width: 100%;
+}
+
+#page4p{
+    font-size: 2.2vw;
     font-weight: 500;
-    text-decoration: none;
- }
+    width: 50%;
+    margin-bottom: 4vw;
+}
+#page4flex{
+    display: flex;
+    gap: 2vw;
+    
+}
+#page4flex img{
+    height:80vh;
+    width:35vw;
+    
+}
+#page4flex p{
+    font-size: 1.1vw;
+    width:27%;
+    margin:1vw;
+}
+
+#blue-box{
+   
+    /* margin-left: 25vw; */
+    background-color: #3F7DF4;
+    padding:3vw 2.5vw;
+    position: relative;
+    margin-top: -13vw;
+    margin-left:25vw;
+    width:30vw;
+}
+.box-content{
+     display: flex;
+     font-weight: 100;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2vw 0vw;
+    border-bottom: 1px solid #ffffffa0 ;
+}
+
+.box-content p{
+    width:10vw
+}
+.box-content h4{
+    font-size: 1.5vw;    
+}
+
+#page5{
+   min-height: 100vh ;
+   width: 100%;
+   padding-top: 7vh;
+}
