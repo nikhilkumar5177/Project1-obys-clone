@@ -21,6 +21,7 @@ body.no-scroll {
   border: 1px solid rgba(135, 135, 135, 0.922);
   border-radius: 50%;
   position: fixed;
+  opacity: 1;
   pointer-events: none;
   z-index: 999999999;
 }
@@ -29,6 +30,7 @@ html,
 body {
     color:white;
   height: 100%;
+  overflow: hidden;
   background-color: black;
   width: 100%;
 }
@@ -136,6 +138,7 @@ body {
   width: 70%;
   margin-left: 28vw;
   height: fit-content;
+  overflow: hidden;
   padding-bottom: 0.5vw;
 }
 .hero:nth-child(2) {
@@ -146,6 +149,7 @@ body {
   text-transform: uppercase;
   line-height: 7vw;
   font-size: 7vw;
+  z-index: 999;
 }
 
 #hero1 h1:before{
@@ -159,7 +163,7 @@ body {
 }
 #hero3 {
   display: flex;
-  /* position: relative; */
+  position: relative;
   font-size: 4.55vw;
   text-transform: uppercase;
   line-height: 7vw;
@@ -219,6 +223,111 @@ body {
     min-height: 100vh;
     width: 100%;
     position: relative;
+    padding: 17vw 2vw;
+}
+
+#page3 h1{
+    margin-left:38vw;
+    font-size: 6vw;
+    text-transform: uppercase;
+}
+
+#page3 h1:before{
+    content: "03";
+    position: absolute;
+    left:20%;
+    font-size:3vw;
+    font-family: "silk serif";
+    font-weight: 100;
+}
+#underline1{
+    margin:5vh 0;
+    margin-left: 28vw;
+    width: 70%;
+    height: 0.2vh;
+    background-color: #fff;
+}
+
+#img-container{
+  /* background-color: red; */
+  padding: 1vw;
+  flex-wrap: wrap;
+  position: relative;
+  display:flex;
+}
+
+.img-div{
+  flex-shrink: 0;
+  margin:2vw;
+  position: relative;
+  overflow: hidden;
+  width:23vw;
+  height: 30vw;
+  border-bottom: 1px solid #ffffffa0 ;
+}
+.img-div img{
+  
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#img2{
+  height: 40vw;
+  width: 32vw;
+}
+
+.bottom-arrow:nth-child(3){
+  margin-top:15vw;
+}
+#dang1{
+  transform: rotate(-45deg);
+}
+.bottom-arrow{
+  margin-left:5vw;
+  border: 1px solid white;
+  width:23vw;
+  height:23vw;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-arrow svg{
+  -webkit-text-stroke: 1px white;
+  height:15vh;
+  color: transparent;
+}
+
+.page3-circle{
+  transition: all 0.4s ease;
+  height: 100%;
+  width:100%;
+  position: absolute;
+  top:0;
+  opacity: 0;
+  border-radius: 50%;
+  left:0;
+  background-color: #fff;
+ 
+}
+
+.page3-circle p{
+  font-size:1vw;
+  font-weight: 600;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  height: 100%;
+  width:100%;
+  padding:2vw;
+}
+
+.bottom-arrow:hover .page3-circle{
+  opacity:1;
 }
 
 #page4{
@@ -412,7 +521,6 @@ font-size: 7vw;
     color: transparent;
 }
 
-
 #footer-div{
     display: flex;
     margin:15vh 0;
@@ -432,4 +540,9 @@ font-size: 7vw;
 .box h6{
     font-size: 1vw;
     padding: 4vh 0;
+}
+
+_canvas_container{
+  z-index: 99999 !important ;
+  pointer-events: none;
 }
