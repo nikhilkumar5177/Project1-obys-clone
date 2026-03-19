@@ -1,10 +1,10 @@
-// ================= LOCO + SCROLLTRIGGER =================
 function loco() {
     gsap.registerPlugin(ScrollTrigger);
 
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector("#main"),
-        smooth: true
+        smooth: true,
+        lerp: 0.08
     });
 
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -12,7 +12,7 @@ function loco() {
     ScrollTrigger.scrollerProxy("#main", {
         scrollTop(value) {
             return arguments.length
-                ? locoScroll.scrollTo(value, 0, 0)
+                ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
                 : locoScroll.scroll.instance.scroll.y;
         },
         getBoundingClientRect() {
@@ -29,9 +29,14 @@ function loco() {
     });
 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh();
-}
 
+    ScrollTrigger.refresh();
+
+    setTimeout(() => {
+        document.body.style.height =
+            document.querySelector("#main").scrollHeight + "px";
+    }, 500);
+}
 // ================= LOADING ANIMATION =================
 function loading() {
     let h5timmer = document.querySelector("#progress h5");
@@ -160,23 +165,23 @@ function cursor() {
     });
 
 
-    document.addEventListener("mousemove",function(move){
-        gsap.to("#flag",{
-            top:move.y,
-            left:move.x,
-           
+    document.addEventListener("mousemove", function (move) {
+        gsap.to("#flag", {
+            top: move.y,
+            left: move.x,
+
         })
     })
-    document.querySelector(".flag").addEventListener("mouseenter", function(){
-        gsap.to("#flag",{
-            duration:0.1,
-            opacity:1
+    document.querySelector(".flag").addEventListener("mouseenter", function () {
+        gsap.to("#flag", {
+            duration: 0.1,
+            opacity: 1
         })
     })
-    document.querySelector(".flag").addEventListener("mouseleave", function(){
-        gsap.to("#flag",{
-            duration:0.1,
-            opacity:0
+    document.querySelector(".flag").addEventListener("mouseleave", function () {
+        gsap.to("#flag", {
+            duration: 0.1,
+            opacity: 0
         })
     })
 }
