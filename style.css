@@ -1,5 +1,5 @@
 * {
-  cursor: none;
+  /* cursor: none; */
   color: white;
   padding: 0;
   margin: 0;
@@ -164,6 +164,7 @@ body {
 #hero3 {
   display: flex;
   position: relative;
+  z-index: 9999;
   font-size: 4.55vw;
   text-transform: uppercase;
   line-height: 7vw;
@@ -193,8 +194,12 @@ body {
   position: relative;
   left: 40%;
   width: 56.7vw;
+  background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg&quot);
+  background-size: cover;
+  background-position: center;
 }
 #video-container video {
+  opacity: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -262,7 +267,7 @@ body {
   position: relative;
   overflow: hidden;
   width:23vw;
-  height: 30vw;
+  height: 35vw;
   border-bottom: 1px solid #ffffffa0 ;
 }
 .img-div img{
@@ -330,6 +335,16 @@ body {
   opacity:1;
 }
 
+/* .div-container{
+  height: 20%;
+  width: 100%;
+  background-color: red;
+  color: #fff;
+}
+.div-container p{
+  color: white;
+} */
+
 #page4{
     background-color: #151515;
     min-height: 100vh;
@@ -352,7 +367,7 @@ body {
 }
 
 #page4container h1:before{
-    content: "03";
+    content: "04";
     position: absolute;
     top:2vh;
     left:-15%;
@@ -486,7 +501,6 @@ font-size: 7vw;
 }
 
 #footer{
-    
     height: 100vh;
     width: 100%;
     position: relative;
@@ -494,6 +508,11 @@ font-size: 7vw;
     padding:5vh 10vw 0 28vw ;
 }
 
+#footer h1{
+  margin-left:0vw;
+    font-size: 6vw;
+    text-transform: uppercase;
+}
 #footer h1:before{
     content: "04";
     position: absolute;
@@ -503,16 +522,12 @@ font-size: 7vw;
     font-weight: 100;
 }
 .underline{
-    margin:5vh 0;
+    margin:6vh 0;
     width: 100%;
     height: 0.2vh;
     background-color: #fff;
 }
 
-#footer h1{
-    font-size: 6vw;
-    text-transform: uppercase;
-}
 #footer h1:hover{
      -webkit-text-stroke: 1px #fff;
     font-style: italic;
@@ -545,4 +560,15 @@ font-size: 7vw;
 _canvas_container{
   z-index: 99999 !important ;
   pointer-events: none;
+}
+
+#flag{
+  position: absolute;
+  height: 20vw;
+  width:15vw;
+  left: 0;
+  top: 0;
+  opacity: 0;
+   transform:translate(-50%,-50%) ;
+   object-fit: cover;
 }
